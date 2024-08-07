@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family:"dana";
+        src:local("dana"), url(../src/fonts/Dana/woff2/DanaFaNum-Regular.woff2) format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family:"dana DemiBold";
+        src:local("dana DemiBold"), url(../src/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2) format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family:"dana Mediume";
+        src:local("dana Mediume"), url(../src/fonts/Dana/woff2/DanaFaNum-Medium.woff2) format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family:"morabba Bold";
+        src:local("morabba Bold"), url(../src/fonts/Morabba/woff2/Morabba-Bold.woff2) format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family:"morabba Light";
+        src:local("morabba Light"), url(../src/fonts/Morabba/woff2/Morabba-Light.woff2) format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family:"morabba Mediume";
+        src:local("morabba Mediume"), url(../src/fonts/Morabba/woff2/Morabba-Medium.woff2) format("woff2");
+        font-display: swap;
+    }
+
+}
+@layer components { 
+    .subMenu{
+       @apply flex  flex-col gap-x-2.5 mr-7 mt-6 dark:text-white text-zinc-600 space-y-6 ; 
+    }
+    /* .subMenuOpen{
+        @apply  ;
+    } */
+    .subMenuClose{
+        @apply hidden
+    }
+    .subItem ::after {
+        content:"";
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius:100%;
+        background-color: #fdba74;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+    }
+    .subItem{
+        padding-right: 10px;
+        position: relative;
+        color: #fdba74;
+    }
+
+    .circle-main{
+        @apply absolute left-0 right-0 bottom-0 mx-auto  translate-y-2/4 
+    }
+    .circle{
+        @apply border rounded-full  justify-center items-center hidden md:flex 
+    } 
+    .circle-lg{
+        @apply w-[203px] h-[203px]  border-white/25 
+    }
+    .circle-md{
+        @apply  w-[145px] h-[145px] border-white/50
+    }
+    .circle-sm {
+        @apply w-[95px] h-[95px] border-white/80
+    }
+
+
+    @media screen and (min-width: 1280px) {
+
+            html.dark .products{
+                background-image: url(../src/img/body-bg\ dark.png);
+        }
+            .products{
+                /* background-image : url("../src/img/body-bg\ dark.png");  */
+                /* linear-gradient :  , */
+                /* background: linear-gradient((rgba(243,244,246,0.65),rgba(243, 244, 246, 0.65))); */
+                /* background:  linear-gradient(to rgba(243,244,246,0.65) from rgba(200, 100, 200, 0.65)) ; */
+                background: linear-gradient(270deg , rgba(243,244,246,0.65) ,rgba(243,244,246,0.65)),url("../src/img/body-bg\ dark.png") ;
+                background-repeat : no-repeat ;
+                background-size: 100%;
+                /* @apply grad */
+    }
+
+    }
+
+    /* .products{
+        @apply    ;
+    } */
+
+    .section-title{
+        @apply  md:text-5xl text-2xl font-morabbaBold text-zinc-700 dark:text-white 
+    }
+    .section-sub-title{
+        @apply md:text-3xl text-lg font-morabbaLight text-zinc-700 dark:text-white md:mt-1.5 mt-0.5
+
+    }
+    .section-link{
+        @apply md:text-xl text-base  font-dana text-orange-300  flex items-center tracking-tightest md:hover:bg-orange-300/20 h-10 pr-3 pl-0.5 rounded-lg 
+
+    }
+
+    .section-item{
+        @apply shadow-normal p-5 rounded-xl dark:bg-zinc-700 bg-white
+    };
+    
+    .offer-icon{
+        @apply text-xs text-white dark:text-zinc-700 absolute rounded-full top-2 right-2  md:top-3.5 md:right-3.5 md:px-3.5 md:h-[30px] md:w-14 w-10 h-5 md:leading-[32px] leading-6 flex justify-center items-center 
+    };
+    .offer-icon{
+        /* height: 30px;
+        width: 56px; */
+        background-color: #fdba74;
+        /* line-height: 32px; */
+    }
+    .offer::after{
+        content:"";
+        height: 1px;
+        width: 100%;
+        background-color: #ca2323;
+        inset: 0;
+
+        position: absolute;
+        margin: auto;
+    }
+    .cat-img-right{
+        background: linear-gradient(to right , rgba(0 , 0, 0, 0.3) ,rgba(0, 0, 0, 0.988)),url("../src/img/categories/category-right.jpg") ;
+    }
+    .cat-img-left{
+        /* background-image:linear-gradient(270deg,rgb(0,0,0)35.85%rgb(243,244,246)) ; */
+        /* background-image:linear-gradient(to right, #673AB7, #2196F3, #87C5~40); */
+        /* background: linear-gradient(to right, yellow, #009966, purple); */
+        background: linear-gradient(to right , rgba(0 , 0, 0, 0.3) ,rgba(0, 0, 0, 0.988)),url("../src/img/categories/category-left.jpg") ;
+        /* background-image: ; */
+    }
+    .linner-bg{
+        background: linear-gradient(to right , #FED7AA ,#FDBA74),url("../src/img/blogs/blog-2.png");
+    }
+    .linner-bg{
+      @apply w-[280px] h-[186px] border border-gray-100 rounded-xl mt-2.5
+    }
+}
+
+.servics {
+    @apply relative
+}
+
+
+
+
+
+
+.servics::after,
+.servics::before{
+    content: "";
+    position: absolute;
+    background-color: #D1D5DB;
+    display: block;
+    margin: auto;
+    inset: 0;
+}
+
+@media screen and (min-width: 620px) {
+    .servics::after,
+    .servics::before{
+        content: none;
+    }
+
+}
+
+.servics::after{
+    width: calc(100% - 32px);
+    height: 1px;
+}
+
+.servics::before{
+    height: calc(100% + 20px);
+    width: 1px;
+}
+
+html.dark .servics::after,
+html.dark .servics::before{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.s{
+    background-image: url(/src/img/headerBgDesktop.webp);
+    background-image: url(/src/img/headerBgMobile1.png);
+}
+.link-fast{
+    @apply block relative pr-6
+}
+
+.link-fast::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    background-color: currentColor;
+    border-radius: 24px;
+    inset: 0;
+    margin: auto 0;
+     
+}
+ 
+
